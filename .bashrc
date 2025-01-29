@@ -13,4 +13,4 @@ PS1='[\u@\h \W]\$ '
 export PATH=$PATH:$(go env GOPATH)/bin
 
 # setup for zoxide
-eval "$(zoxide init bash)"
+eval "$(zoxide init bash --cmd cd)"

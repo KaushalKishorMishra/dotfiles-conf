@@ -155,8 +155,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # custom alias
 alias logout='pkill -KILL -u $USER'
-alias psql='sudo -iu postgres && psql'
 
 
 # setting up zoxide
-eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh --cmd cd)"
