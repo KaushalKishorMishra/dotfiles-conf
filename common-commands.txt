@@ -1,0 +1,10 @@
+# procedure for adding .file in this dotfiles
+- Step 1: Copy the .file to the dotfiles folder with its intended structure from home folder
+- Setp 3: Change the .file name in the exisiting directory to something else(the symbolic link form this folder will create conflict in the next step)
+- Step 4: stow . (creates a sybolic link for the files under this folder to the actual position)
+(Optional:
+- Setp 5: If error comes in the previous step it means that you havent changed the name of the files in orginal directory
+        You can use this command to replace the .files contents from the actual file to this .file
+        ## stow --adopt .
+        this command rewrites the conflicting commands in the dotfiles folder with its orginal file contents
+)
