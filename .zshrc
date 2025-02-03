@@ -159,3 +159,6 @@ alias logout='pkill -KILL -u $USER'
 
 # setting up zoxide
 eval "$(zoxide init zsh --cmd cd)"
+
+# setting up nvim
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"

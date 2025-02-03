@@ -14,3 +14,6 @@ export PATH=$PATH:$(go env GOPATH)/bin
 
 # setup for zoxide
 eval "$(zoxide init bash --cmd cd)"
+
+# setting up nvim
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
