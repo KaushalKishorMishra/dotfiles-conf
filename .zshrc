@@ -162,3 +162,6 @@ eval "$(zoxide init zsh --cmd cd)"
 
 # setting up nvim
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
+# cuda path configuration
+export PATH=/opt/cuda/bin:$PATH
