@@ -139,8 +139,8 @@ alias ga='git add'
 alias gc='git commit -m'
 alias gp='git push origin master'
 
-# go env configuration
-export PATH=$PATH:$(go env GOPATH)/bin
+# go path configuration
+# export PATH=$PATH:$(go env GOPATH)/bin
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -165,3 +165,9 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 # cuda path configuration
 export PATH=/opt/cuda/bin:$PATH
+
+# path for andriod sdk 
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH
+export PATH=$HOME/Android/Sdk/platform-tools:$PATH
+
