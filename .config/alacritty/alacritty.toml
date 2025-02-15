@@ -103,4 +103,4 @@ ipc_socket = true
 ## GENERAL --------------------------------------------------------
 
 ## Import additional configuration files.
-import = ["~/.config/alacritty/colors.toml", "~/.config/alacritty/fonts.toml"]
+import = ["./colors.toml", "./fonts.toml"]

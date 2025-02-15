@@ -70,7 +70,7 @@ zstyle ':omz:update' mode disabled  # disable automatic updates
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+# plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -133,11 +133,11 @@ alias lr='ls -R'
 alias lg='ls -l --group-directories-first'
 
 # git
-alias gcl='git clone --depth 1'
-alias gi='git init'
-alias ga='git add'
-alias gc='git commit -m'
-alias gp='git push origin master'
+# alias gcl='git clone --depth 1'
+# alias gi='git init'
+# alias ga='git add'
+# alias gc='git commit -m'
+# alias gp='git push origin master'
 
 # go path configuration
 # export PATH=$PATH:$(go env GOPATH)/bin
@@ -198,7 +198,10 @@ zinit light-mode for \
 # zinit plugins
 
 ## plugin supports auto-suggestion for terminal
+# Plugin history-search-multi-word loaded with investigating.
+zinit load zdharma-continuum/history-search-multi-word
+
+# Two regular plugins loaded without investigating.
 zinit light zsh-users/zsh-autosuggestions
-## plugin supports for syntax hilighting for terminal
 zinit light zdharma-continuum/fast-syntax-highlighting
 
