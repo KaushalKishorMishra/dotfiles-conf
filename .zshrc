@@ -206,7 +206,31 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
 
 
-# Automatically start tmux if not already inside a tmux session
+# Automatically start tmux if not already inside a tmux session(ask users)
+#
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    tmux attach-session -t default || tmux new-session -s default
+    echo "Tmux options:"
+    echo "1) Attach to previous session"
+    echo "2) Start a new session"
+    echo "3) Skip tmux"
+
+    echo -n "Choose an option (1/2/3): "
+    read choice
+
+    case $choice in
+        1) 
+            # Attach to the last session if it exists, otherwise create a new one
+            tmux attach-session || tmux new-session ;;
+        2) 
+            # Start a new named session
+            echo -n "Enter session name: "
+            read session_name
+            tmux new-session -s "$session_name" ;;
+        3) 
+            # Skip tmux
+            echo "Skipping tmux. Opening normal shell..." ;;
+        *) 
+            echo "Invalid choice. Skipping tmux."
+            ;;
+    esac
 fi
