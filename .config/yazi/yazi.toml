@@ -1,0 +1,40 @@
+# git config
+[[plugin.prepend_fetchers]]
+id = "git"
+name = "*"
+run = "git"
+
+[[plugin.prepend_fetchers]]
+id = "git"
+name = "*/"
+run = "git"
+
+# preview archived files config
+[[plugin.prepend_previewers]]
+mime = "application/{,g}zip"
+run = "lsar"
+
+[[plugin.prepend_previewers]]
+mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}"
+run = "lsar"
+
+# all the manager configurations
+[manager]
+# display information associated with the file on the right side of the file list row
+linemode = "size_and_mtime"
+# show hidden files and folders
+show_hidden = true
+# file sorting method.
+sort_by = "alphabetical"
+# hide the path of the symlink file point to, after the filename
+show_symlink = false
+
+# all the preview configurations
+[preview]
+# wrap long lines in the code preview
+wrap = "no"
+
+# all the which-key configurations
+[which]
+# candidate sorting method.
+sort_by = "key"

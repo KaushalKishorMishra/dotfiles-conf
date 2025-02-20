@@ -1,0 +1,28 @@
+# compress a file or folder 
+[[manager.prepend_keymap]]
+on = ["c", "a"]                 # .zip,.7z,.tar,.tar,.tar.xz,.tar.bz2,.tar.zst
+run = "plugin compress"
+desc = "Archive selected files"
+
+# toggles between maximize and minimize of a file
+[[manager.prepend_keymap]]
+on = "T"
+run = "plugin max-preview"
+desc = "Maximize or restore preview"
+
+# preview the mounted drives
+[[manager.prepend_keymap]]
+on = "M"
+run = "plugin mount"
+
+# return to shell
+[[manager.prepend_keymap]]
+on = "!"
+run = 'shell "$SHELL" --block'
+desc = "Open shell here"
+
+# when esc is pressed close input
+[[input.prepend_keymap]]
+on = "<Esc>"
+run = "close"
+desc = "Cancel input"
