@@ -124,13 +124,20 @@ add-zsh-hook -Uz precmd rehash_precmd
 alias zshconfig="geany ~/.zshrc"
 alias ohmyzsh="thunar ~/.oh-my-zsh"
 
+alias clean_ud="sudo pacman -Rns $(pacman -Qdtq) && sudo pacman -Sc"
+
+
 # ls
+alias ls=lsd
 alias l='ls -lh'
 alias ll='ls -lah'
 alias la='ls -A'
 alias lm='ls -m'
 alias lr='ls -R'
 alias lg='ls -l --group-directories-first'
+
+# cat
+alias cat=bat
 
 # git
 # alias gcl='git clone --depth 1'
@@ -207,30 +214,40 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 
 
 # Automatically start tmux if not already inside a tmux session(ask users)
-#
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    echo "Tmux options:"
-    echo "1) Attach to previous session"
-    echo "2) Start a new session"
-    echo "3) Skip tmux"
+    if tmux list-sessions &> /dev/null; then
+        # Show menu if a session exists
+        echo "Tmux options:"
+        echo "1) Attach to previous session"
+        echo "2) Start a new session"
+        echo "3) Skip tmux"
 
-    echo -n "Choose an option (1/2/3): "
-    read choice
+        echo -n "Choose an option (1/2/3): "
+        read choice
 
-    case $choice in
-        1) 
-            # Attach to the last session if it exists, otherwise create a new one
-            tmux attach-session || tmux new-session ;;
-        2) 
-            # Start a new named session
-            echo -n "Enter session name: "
-            read session_name
-            tmux new-session -s "$session_name" ;;
-        3) 
-            # Skip tmux
-            echo "Skipping tmux. Opening normal shell..." ;;
-        *) 
-            echo "Invalid choice. Skipping tmux."
-            ;;
-    esac
+        case $choice in
+            1) 
+                tmux attach-session || tmux new-session ;;
+            2) 
+                echo -n "Enter session name: "
+                read session_name
+                tmux new-session -s "$session_name" ;;
+            3) 
+                echo "Skipping tmux. Opening normal shell..." ;;
+            *) 
+                echo "Invalid choice. Skipping tmux."
+                ;;
+        esac
+    else
+        # No tmux sessions exist, so start a new session
+        tmux new-session
+    fi
 fi
+
+
+
+
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/kaushal/.lmstudio/bin"
+export OLLAMA_DIR=~/.lmstudio/models/

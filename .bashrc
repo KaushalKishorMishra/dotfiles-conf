@@ -1,7 +1,7 @@
 # Enable the subsequent settings only in interactive sessions
 case $- in
-  *i*) ;;
-    *) return;;
+*i*) ;;
+*) return ;;
 esac
 
 # Path to your oh-my-bash installation.
@@ -142,3 +142,53 @@ source "$OSH"/oh-my-bash.sh
 # Example aliases
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
+#
+
+# setting up zoxide
+eval "$(zoxide init bash --cmd cd)"
+
+# setting up nvim
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
+# Automatically start tmux if not already inside a tmux session(ask users)
+if command -v tmux &>/dev/null && [ -z "$TMUX" ]; then
+  if tmux list-sessions &>/dev/null; then
+    # Show menu if a session exists
+    echo "Tmux options:"
+    echo "1) Attach to previous session"
+    echo "2) Start a new session"
+    echo "3) Skip tmux"
+
+    echo -n "Choose an option (1/2/3): "
+    IFS= read -r -n 1 choice # Properly handle single character input
+    echo ""                  # Move to a new line after keypress
+
+    case "$choice" in
+    1)
+      tmux attach-session || tmux new-session
+      ;;
+    2)
+      echo -n "Enter session name: "
+      read session_name
+      tmux new-session -s "$session_name"
+      ;;
+    3)
+      echo "Skipping tmux. Opening normal shell..."
+      ;;
+    *)
+      echo "Invalid choice. Skipping tmux."
+      ;;
+    esac
+  else
+    # No tmux sessions exist, so start a new session
+    tmux new-session
+  fi
+fi
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/kaushal/.lmstudio/bin"
+export OLLAMA_DIR=~/.lmstudio/models/
+
+# alias
+alias ls=lsd
+alias cat=bat
