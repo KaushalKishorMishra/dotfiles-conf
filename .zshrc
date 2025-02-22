@@ -121,7 +121,7 @@ rehash_precmd() {
 add-zsh-hook -Uz precmd rehash_precmd
 
 # omz
-alias zshconfig="geany ~/.zshrc"
+alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="thunar ~/.oh-my-zsh"
 
 alias clean_ud="sudo pacman -Rns $(pacman -Qdtq) && sudo pacman -Sc"
@@ -244,10 +244,5 @@ if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     fi
 fi
 
-
-
-
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/home/kaushal/.lmstudio/bin"
-export OLLAMA_DIR=~/.lmstudio/models/
+# alias for zed-editor
+alias zed="$HOME/.local/bin/zed"
