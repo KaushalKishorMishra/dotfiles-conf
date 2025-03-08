@@ -244,5 +244,5 @@ if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     fi
 fi
 
-# alias for zed-editor
+# alisas for zed-editor
 alias zed="$HOME/.local/bin/zed"
