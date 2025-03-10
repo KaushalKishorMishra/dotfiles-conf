@@ -1,0 +1,27 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+	{
+		"context": "Workspace",
+		"bindings": {
+			"ctrl-p": "file_finder::Toggle"
+		}
+	},
+	{
+		"context": "Editor",
+		"bindings": {
+			"ctrl-enter": "editor::NewlineBelow",
+			"ctrl-shift-enter": "editor::NewlineAbove",
+			"ctrl-shift-i": "assistant::InlineAssist",
+			"ctrl-shift-l": "editor::SelectLine",
+			"alt-b": "editor::ToggleFold",
+			"alt-z": "editor::ToggleSoftWrap",
+			"ctrl-shift-z": "editor::Redo"
+		}
+	}
+]

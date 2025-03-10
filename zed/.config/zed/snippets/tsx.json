@@ -1,0 +1,50 @@
+{
+	"Log to the console": {
+		"prefix": "clg",
+		"body": ["console.log($1);", "$0"],
+		"description": "Log to the console"
+	},
+	"Log to the console with type": {
+		"prefix": "clgt",
+		"body": ["console.log('$1', $1);", "$0"],
+		"description": "Log to the console with type"
+	},
+	"Create a reactjs/nextjs builder component": {
+		"prefix": "rafc",
+		"body": [
+			"import React from 'react'",
+			"",
+			"const ${1:ComponentName}:React.FC = () => {",
+			"    return (",
+			"        <div>",
+			"            $0",
+			"        </div>",
+			"    )",
+			"}",
+			"",
+			"export default ${1:ComponentName}"
+		],
+		"description": "Create a reactjs/nextjs builder component"
+	},
+	"Create a reactjs/nextjs builder component with props": {
+		"prefix": "rafce",
+		"body": [
+			"import React from 'react'",
+			"",
+			"type P${1:ComponentName} = {",
+			"    $2",
+			"}",
+			"",
+			"const ${1:ComponentName}:React.FC<P${1:ComponentName}> = ({ $3 }) => {",
+			"    return (",
+			"        <div>",
+			"            $0",
+			"        </div>",
+			"    )",
+			"}",
+			"",
+			"export default ${1:ComponentName}"
+		],
+		"description": "Create a reactjs/nextjs builder component with props"
+	}
+}

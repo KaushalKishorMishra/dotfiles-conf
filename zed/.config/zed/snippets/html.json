@@ -1,0 +1,12 @@
+{
+	"Create a closing and opeaning tag for div": {
+		"prefix": "div",
+		"body": ["<div>$1</div>", "$0"],
+		"description": "Create a closing and opeaning tag for div"
+	},
+	"Create a closing and opeaning tag for img": {
+		"prefix": "img",
+		"body": ["<img src={\"$1\"} alt={\"$2\"} />", "$0"],
+		"description": "Create a closing and opeaning tag for img"
+	}
+}

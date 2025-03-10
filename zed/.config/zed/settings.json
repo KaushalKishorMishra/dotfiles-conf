@@ -1,0 +1,226 @@
+// Zed Settings Configuration
+//
+// Documentation: https://zed.dev/docs/configuring-zed
+// To see all default settings, run `zed: open default settings`
+// from the command palette (cmd-shift-p / ctrl-shift-p).
+
+{
+	// ===============================
+	// AI Assistant Configuration
+	// ===============================
+	"assistant": {
+		"default_model": {
+			"provider": "copilot_chat", // AI assistant provider (GitHub Copilot Chat)
+			"model": "o3-mini" // AI model being used
+		},
+		"version": "2" // Assistant version
+	},
+
+	// ===============================
+	// UI & Theme Settings
+	// ===============================
+	"theme": {
+		"mode": "dark", // Default theme mode
+		"light": "Catppuccin Espresso (Blur)", // Light theme option
+		"dark": "Catppuccin Espresso (Blur)" // Dark theme option
+	},
+	"icon_theme": "Catppuccin Mocha", // Icon theme
+	"base_keymap": "VSCode", // Keybindings layout (VSCode-style)
+	"ui_font_size": 14, // UI font size
+	"buffer_font_size": 14, // Font size for editor text
+
+	// ===============================
+	// Editing Behavior
+	// ===============================
+	"auto_signature_help": true, // Show function signature hints
+	"always_treat_brackets_as_autoclosed": true, // Treat all brackets as auto-closed
+	"hard_tabs": true, // Use hard tabs instead of spaces
+	"use_smartcase_search": true, // Enable case-sensitive search only if uppercase letters are used
+	"soft_wrap": "editor_width", // Wrap text to fit within editor width
+	"default_line_ending": "lf", // Set default line ending to LF (Unix-style)
+
+	// ===============================
+	// Features & Enhancements
+	// ===============================
+	"features": {
+		"copilot": true, // Enable GitHub Copilot
+		"edit_prediction_provider": "copilot" // Use Copilot for code predictions
+	},
+	"unnecessary_code_fade": 0.3, // Dim unused code (opacity level)
+	"current_line_highlight": "all", // Highlight the current line
+
+	// ===============================
+	// Autosave & Session Restore
+	// ===============================
+	"autosave": {
+		"after_delay": {
+			"milliseconds": 1000 // Auto-save changes after 1 second of inactivity
+		}
+	},
+	"restore_on_startup": "last_session", // Restore the last session on startup
+	"confirm_quit": true, // Prompt before quitting
+
+	// ===============================
+	// Editor Tabs Configuration
+	// ===============================
+	"tabs": {
+		"show_icons": true, // Show file icons on tabs
+		"git_status": true, // Show Git status in tabs
+		"close_position": "left", // Close button position (right side)
+		"activate_on_close": "left_neighbour", // Switch to left tab when closing
+		"file_icons": true, // Display file icons in tabs
+		"show_full_path": false, // Don't show full file path
+		"always_show_close_button": false // Hide close button if only one tab is open
+	},
+
+	// ===============================
+	// Scrollbar & Navigation
+	// ===============================
+	"scrollbar": {
+		"show": "never" // Hide the scrollbar
+	},
+	"hover_popover_delay": 100, // Delay for tooltips/popovers
+
+	// ===============================
+	// Git Panel Configuration
+	// ===============================
+	"git_panel": {
+		"dock": "right", // Place Git panel on the right
+		"width": 30, // Width of Git panel
+		"button": true, // Show Git panel toggle button
+		"status_style": "icon", // Show Git status style as icons
+		"diff": true, // Show file diffs
+		"scrollbar": {
+			"show": "never"
+		}
+	},
+
+	// ===============================
+	// Project Panel Configuration
+	// ===============================
+	"project_panel": {
+		"dock": "left", // Place project panel on the left
+		"default_width": 250, // Set default width
+		"button": true, // Show project panel toggle button
+		"entry_spacing": "comfortable", // Use comfortable spacing
+		"file_icons": true, // Show file icons
+		"folder_icons": true, // Show folder icons
+		"git_status": true, // Show Git status
+		"indent_size": 25, // Set indentation width
+		"git_diff": true, // Show Git diff in project panel
+		"auto_reveal_entries": true, // Auto-reveal files in the panel
+		"auto_fold_dirs": false, // Do not auto-fold directories
+		"scrollbar": { "show": "never" }, // Hide scrollbar
+		"indent_guides": { "show": "always" }, // Always show indentation guides
+		"show_diagnostics": "all" // Show all diagnostics (errors/warnings)
+	},
+
+	// ===============================
+	// Notifications & Calls
+	// ===============================
+	"notification_panel": {
+		"dock": "right", // Dock notification panel to the right
+		"button": true, // Show toggle button for notifications
+		"default_width": 250 // Set panel width
+	},
+	"calls": {
+		"mute_on_join": true // Auto-mute when joining a call
+	},
+
+	// ===============================
+	// Terminal Configuration
+	// ===============================
+	"terminal": {
+		"copy_on_select": true, // Auto-copy text when selecting in terminal
+		"button": true, // Show terminal button
+		"dock": "bottom", // Place terminal at the bottom
+		"scrollbar": { "show": "never" }, // Hide scrollbar in terminal
+		"toolbar": { "breadcrumbs": true }, // Show breadcrumbs in terminal
+		"shell": { "program": "zsh" }, // Use Zsh as the shell
+		"working_directory": "current_project_directory", // Set working directory to project root
+		"option_as_meta": true // Use Option key as Meta key
+	},
+
+	// ===============================
+	// Toolbar Configuration
+	// ===============================
+	"toolbar": {
+		"breadcrumbs": true, // Show breadcrumbs.
+		"quick_actions": true, // Show quick action buttons.
+		"selections_menu": false, // Hide selection menu in the editor toolbar
+		"":""
+	},
+
+	// ===============================
+	// Language-Specific Settings
+	// ===============================
+	"languages": {
+		"JavaScript": {
+			"tab_size": 4, // Set tab size to 4 spaces
+			"formatter": {
+				"external": {
+					"command": "prettier", // Use Prettier for formatting
+					"arguments": ["--stdin-filepath", "{buffer_path}"]
+				}
+			}
+		},
+		"HTML": {
+			"language_servers": ["vscode-html-language-server", "superhtml"], // Use these language servers
+			"formatter": { "language_server": { "name": "superhtml" } } // Use superhtml formatter
+		}
+	},
+
+	// ===============================
+	// Miscellaneous Settings
+	// ===============================
+	"tab_bar": {
+		"show": true, // Show tab bar
+		"show_nav_history_buttons": true, // Show navigation history buttons
+		"show_tab_bar_buttons": false // Hide extra tab bar buttons
+	},
+	"file_finder": {
+		"modal_max_width": "small", // Set file finder width
+		"file_icons": true, // Show file icons
+		"show_hidden_files": true // Show hidden files
+	},
+	"file_scan_exclusions": [".git"], // Exclude .git from file scan
+
+	// ===============================
+	// Linting & Diagnostics
+	// ===============================
+	"diagnostics": {
+		"inline": {
+			"enabled": false, // Disable inline error messages
+			"update_debounce_ms": 150, // Debounce update delay
+			"padding": 4, // Set padding around diagnostic messages
+			"min_column": 0, // Set minimum column for diagnostics
+			"max_severity": null // Allow all severity levels
+		},
+		"include_warnings": true // Show warnings along with errors
+	},
+
+	// ===============================
+	// Formatting & Prettier
+	// ===============================
+	"formatter": "prettier", // Set Prettier as the default formatter
+
+	// ===============================
+	// Vim Mode
+	// ===============================
+	"vim_mode": false, // Disable Vim mode
+	"vim": {
+		"toggle_relative_line_numbers": true,
+		"use_smartcase_find": true,
+		"use_multiline_find": true,
+		"highlight_on_yank_duration": 0,
+		"use_system_clipboard": "always"
+	},
+
+	// ===============================
+	// Telemetry & Metrics
+	// ===============================
+	"telemetry": {
+		"metrics": true, // Enable usage metrics
+		"diagnostics": true // Enable diagnostic reporting
+	}
+}
