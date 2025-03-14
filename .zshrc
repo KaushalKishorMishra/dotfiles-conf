@@ -246,3 +246,6 @@ fi
 
 # alisas for zed-editor
 alias zed="$HOME/.local/bin/zed"
+
+# Created by `pipx` on 2025-03-11 02:54:32
+export PATH="$PATH:/home/kaushal/.local/bin"

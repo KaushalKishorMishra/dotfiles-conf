@@ -11,7 +11,7 @@
 	"assistant": {
 		"default_model": {
 			"provider": "copilot_chat", // AI assistant provider (GitHub Copilot Chat)
-			"model": "gpt-4o" // AI model being used
+			"model": "o3-mini" // AI model being used
 		},
 		"version": "2" // Assistant version
 	},
@@ -70,7 +70,7 @@
 		"activate_on_close": "left_neighbour", // Switch to left tab when closing
 		"file_icons": true, // Display file icons in tabs
 		"show_full_path": false, // Don't show full file path
-		"show_close_button": "hover" // Hide close button if only one tab is open
+		"always_show_close_button": false // Hide close button if only one tab is open
 	},
 
 	// ===============================
