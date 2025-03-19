@@ -21,8 +21,8 @@
 	// ===============================
 	"theme": {
 		"mode": "dark", // Default theme mode
-		"light": "Catppuccin Espresso (Blur)", // Light theme option
-		"dark": "Catppuccin Espresso (Blur)" // Dark theme option
+		"light": "Ayu Dark", // Light theme option
+		"dark": "Ayu Dark" // Dark theme option
 	},
 	"icon_theme": "Catppuccin Mocha", // Icon theme
 	"base_keymap": "VSCode", // Keybindings layout (VSCode-style)
@@ -85,7 +85,7 @@
 	// Git Panel Configuration
 	// ===============================
 	"git_panel": {
-		"dock": "right", // Place Git panel on the right
+		"dock": "left", // Place Git panel on the right
 		"width": 30, // Width of Git panel
 		"button": true, // Show Git panel toggle button
 		"status_style": "icon", // Show Git status style as icons
@@ -147,8 +147,7 @@
 	"toolbar": {
 		"breadcrumbs": true, // Show breadcrumbs.
 		"quick_actions": true, // Show quick action buttons.
-		"selections_menu": false, // Hide selection menu in the editor toolbar
-		"":""
+		"selections_menu": false // Hide selection menu in the editor toolbar
 	},
 
 	// ===============================
